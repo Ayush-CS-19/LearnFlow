@@ -50,5 +50,13 @@ const userSchema = new mongoose.Schema({
       ref: "CourseProgress",
     },
   ],
+  markedForDeletion: {
+    type: Boolean,
+    default: false,
+  },
+  deletionDate: {
+    type: Date,
+    default: null,
+  },
 });
 module.exports = mongoose.model("User", userSchema);

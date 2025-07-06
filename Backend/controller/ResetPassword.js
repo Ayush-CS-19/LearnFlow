@@ -45,7 +45,8 @@ exports.resetPasswordToken = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       success: false,
-      message: "Something Went Wrong While Sending Reset Password Mail",
+      message: "Something went wrong",
+      error: error.message,
     });
   }
 };
@@ -92,7 +93,8 @@ exports.resetPassword = async (req, res) => {
   } catch (error) {
     return res.status(500).json({
       success: false,
-      message: "Failed to Reset the Password",
+      message: "Something went wrong",
+      error: error.message,
     });
   }
 };
